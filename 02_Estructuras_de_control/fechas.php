@@ -33,7 +33,7 @@
         echo" ahora mismo $dia";
         
 
-        $hora_exacta = (int)date("H:i:s");
+        $hora_exacta = date("H:i:s");
         echo "<h1>$hora_exacta</h1>";
 
 

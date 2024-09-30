@@ -34,6 +34,15 @@
                     </td>
                     
             </tr>
+            <tr>
+                    <td>
+                        <a href="primo.php">primo.php</a>
+                    </td>
+                    <td>
+                        Lista de numeros primos.
+                    </td>
+                    
+            </tr>
 
 </body>
 </html>

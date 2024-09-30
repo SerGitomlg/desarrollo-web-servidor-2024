@@ -6,6 +6,7 @@
     <title>Números</title>
 </head>
 <body>
+    
     <?php
         $numero = 2;
         #Forma 1
@@ -142,9 +143,58 @@
             default:
                 echo "El número es 3";                                
         }
-
-
+    ?>
+    
+    <h3>Ejercicio 3</h3>
+    <p> Calcular la suma de los numeros pares entre 1 y 20</p>
+    <?php
+        $i = 1;
+        $suma = 0;
+        while($i <= 20){
+            $suma += $i;
+        }
+        $i++;
+        echo "<p> La suma es : $suma</p>";
     ?>
 
-</body>
-</html>
+
+
+    <h3>Ejercicio 4</h3>
+    <p> Calcular el factorial de 6 con while</p>
+    <?php
+        $factorial = 6;
+        $i = 1;
+        while($i <= $factorial){
+            $resultado * $i;
+            $i++;
+        }
+        echo "<p> El factorial de $factorial es: $resultado</p>";
+    ?>
+
+
+
+
+    <h3>Lista con FOR</h3>
+    <?php
+        echo "<ul>";
+        for($i = 1; $i <= 10; $i++){
+            echo "<li>$i</li>";
+        }
+        echo "</ul>";
+    ?>
+
+
+    <h3>Lista con FOR con BREAK cursed</h3>
+        <?php
+            echo "<ul>";
+            //Código ofuscado
+            for($i = 1; ; ){
+                if($i > 10){
+                    break;
+                }
+                echo "<li>$i</li>";
+                $i++;
+            }
+            echo "</ul>";
+        ?>
+    */
