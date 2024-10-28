@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplos</title>
     <link href="estilos.css" rel="stylesheet" type="text/css">
-    <?php
-        error_reporting( E_ALL );
-        ini_set("display_errors",1);
-    ?>
+    
 </head>
 <body>
 
@@ -145,8 +142,8 @@
                 echo "</tr>";
             }
             ?>
-            /* Mezcla de PHP y HTML */
-            <?php
+             
+            <?php    //Mezcla de PHP y HTML
             foreach($audis as $matricula => $audi) { ?>
                 <tr>
                     <td><?php echo $matricula ?></td>
