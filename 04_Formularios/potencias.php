@@ -35,6 +35,7 @@
                     $base = $tmp_base; 
                 }
             }
+            
             if($tmp_exponente == ''){                
                     echo "<p>El exponente es obligatorio</p>";
             }else{

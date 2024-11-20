@@ -29,7 +29,7 @@
                     $max = $numero3;
                 }           
             }
-            echo "<p>El máximo es $max</p>";
+            echo "<p>El mayor es $max</p>";
         ?>
 </body>
 </html>

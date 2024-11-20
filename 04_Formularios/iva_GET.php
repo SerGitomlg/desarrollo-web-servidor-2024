@@ -34,15 +34,15 @@
         if($tmp_precio == ''){                
             echo "<p>El precio es obligatorio</p>";
         }else{
-            if(filter_var($tmp_precio, FILTER_VALIDATE_FLOAT) === FALSE){
+           /* if(filter_var($tmp_precio, FILTER_VALIDATE_FLOAT) === FALSE){
                 echo "<p>El precio debe ser un número</p>";
             }else{
                 if($tmp_precio <= 0){
                     echo "<p>El salario debe ser mayor 0</p>";                            
-                }else{
+                }else{  */
                     $precio = $tmp_precio;
-                } 
-            }
+                //} 
+            //}
         }  
         if($tmp_iva == ''){                
             echo "<p>El IVA es obligatorio</p>";
@@ -78,10 +78,6 @@
         }      
     }*/
     ?>
-
-CONTROLAR EN TODOS LOS DEMAS FORMULARIOS HECHOS CON POST QUE SI SE MANDAN LOS CAMPOS VACIOS, SE MUESTRE UN MENSAJE.
-
-CREAR UNA COPIA DE IRPF.PHP CON GET EN VEZ DE POST Y CONTROLAR LOS ERRORES DE ENVIAR EL FORMULARIO VACIO
    
 </body>
 </html>

@@ -4,8 +4,8 @@ define("GENERAL", 1.21);
 define("REDUCIDO", 1.1);
 define("SUPERREDUCIDO", 1.04);
 
-function calcularPVP($precio, $iva){
-    $pvp = match($iva) {
+function calcularPVP(int|float $precio, string $iva) : float{
+    $pvp = match($iva){
         "general" => $precio * GENERAL,
         "reducido" => $precio * REDUCIDO,
         "superreducido" => $precio * SUPERREDUCIDO
@@ -13,7 +13,7 @@ function calcularPVP($precio, $iva){
     return $pvp;
 }
 
-function calcularIRPF($salario){
+function calcularIRPF(int|float $salario) : float{
     $salario_final = null;
     $tramo1 = (12450 * 0.19);
     $tramo2 = ((20200 - 12450) * 0.24);
