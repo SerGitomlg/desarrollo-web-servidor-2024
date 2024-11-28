@@ -22,11 +22,11 @@
 </head>
 <body>
     <div class="container">
-        <h1>Nuevo anime</h1>
+        <h1>Nuevo Producto</h1>
         <?php
         if($_SERVER["REQUEST_METHOD"] == "POST") {
             $titulo = $_POST["titulo"];
-            $nombre_estudio = $_POST["nombre_estudio"];
+            $nombre_producto = $_POST["nombre_producto"];
             $anno_estreno = $_POST["anno_estreno"];
             $num_temporadas = $_POST["num_temporadas"];
             /**
@@ -39,18 +39,18 @@
 
             move_uploaded_file($ubicacion_temporal, $ubicacion_final);
 
-            $sql = "INSERT INTO animes (titulo, nombre_estudio, anno_estreno, num_temporadas, imagen) 
-                VALUES ('$titulo', '$nombre_estudio', $anno_estreno, $num_temporadas, '$ubicacion_final')";
+            $sql = "INSERT INTO animes (titulo, nombre_producto, anno_estreno, num_temporadas, imagen) 
+                VALUES ('$titulo', '$nombre_producto', $anno_estreno, $num_temporadas, '$ubicacion_final')";
 
             $_conexion -> query($sql);
         }
 
-        $sql = "SELECT * FROM estudios ORDER BY nombre_estudio";
+        $sql = "SELECT * FROM estudios ORDER BY nombre_producto";
         $resultado = $_conexion -> query($sql);
         $estudios = [];
 
         while($fila = $resultado -> fetch_assoc()) {
-            array_push($estudios, $fila["nombre_estudio"]);
+            array_push($estudios, $fila["nombre_producto"]);
         }
         //print_r($estudios);
  
@@ -61,13 +61,13 @@
                 <input class="form-control" type="text" name="titulo">
             </div>
             <div class="mb-3">
-                <label class="form-label">Nombre estudio</label>
-                <select class="form-select" name="nombre_estudio">
+                <label class="form-label">Nombre Producto</label>
+                <select class="form-select" name="nombre_producto">
                     <option value="" selected disabled hidden>--- Elige el estudio ---</option>
                     <?php
-                    foreach($estudios as $estudio) { ?>
-                        <option value="<?php echo $estudio ?>">
-                            <?php echo $estudio ?>
+                    foreach($productos as $producto) { ?>
+                        <option value="<?php echo $producto ?>">
+                            <?php echo $producto ?>
                         </option>
                     <?php } ?>
                 </select>

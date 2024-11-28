@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuevo anime</title>
+    <title>Nuevo Producto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <?php
         error_reporting( E_ALL );
@@ -22,12 +22,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>Editar anime</h1>
+        <h1>Editar Producto</h1>
         <?php
         //echo "<h1>" . $_GET["id_anime"] . "</h1>";
 
-        $id_anime = $_GET["id_anime"];
-        $sql = "SELECT * FROM animes WHERE id_anime = $id_anime";
+        $id_producto = $_GET["id_producto"];
+        $sql = "SELECT * FROM animes WHERE id_anime = $id_producto";
         $resultado = $_conexion -> query($sql);
         
         while($fila = $resultado -> fetch_assoc()) {
@@ -49,7 +49,7 @@
         }
 
         if($_SERVER["REQUEST_METHOD"] == "POST") {
-            $id_anime = $_POST["id_anime"];
+            $id_producto = $_POST["id_producto"];
             $titulo = $_POST["titulo"];
             $nombre_estudio = $_POST["nombre_estudio"];
             $anno_estreno = $_POST["anno_estreno"];
@@ -60,7 +60,7 @@
                 nombre_estudio = '$nombre_estudio',
                 anno_estreno = $anno_estreno,
                 num_temporadas = $num_temporadas
-                WHERE id_anime = $id_anime
+                WHERE id_producto = $id_producto
             ";
             $_conexion -> query($sql);
         }
@@ -95,7 +95,7 @@
                 <input class="form-control" type="file" name="imagen">
             </div>
             <div class="mb-3">
-                <input type="hidden" name="id_anime" value="<?php echo $id_anime ?>">
+                <input type="hidden" name="id_producto" value="<?php echo $id_producto ?>">
                 <input class="btn btn-primary" type="submit" value="Confirmar">
                 <a class="btn btn-secondary" href="index.php">Volver</a>
             </div>

@@ -23,13 +23,13 @@
 <body>
     <div class="container">
         <a class="btn btn-warning" href="usuario/cerrar_sesion.php">Cerrar Sesion</a>
-        <h1>Tabla de animes</h1>
+        <h1>Tabla de Productos</h1>
         <?php
             if($_SERVER["REQUEST_METHOD"] == "POST") {
-                $id_anime = $_POST["id_anime"];
-                echo "<h1>$id_anime</h1>";
+                $id_producto = $_POST["id_producto"];
+                echo "<h1>$id_producto</h1>";
                 //  borrar el anime
-                $sql = "DELETE FROM animes WHERE id_anime = $id_anime";
+                $sql = "DELETE FROM animes WHERE id_producto = $id_producto";
                 $_conexion -> query($sql);
             }
 
@@ -69,11 +69,11 @@
                         </td>
                         <td>
                             <a class="btn btn-primary" 
-                               href="ver_anime.php?id_anime=<?php echo $fila["id_anime"] ?>">Editar</a>
+                               href="ver_anime.php?id_producto=<?php echo $fila["id_producto"] ?>">Editar</a>
                         </td>
                         <td>
                             <form action="" method="post">
-                                <input type="hidden" name="id_anime" value="<?php echo $fila["id_anime"] ?>">
+                                <input type="hidden" name="id_producto" value="<?php echo $fila["id_producto"] ?>">
                                 <input class="btn btn-danger" type="submit" value="Borrar">
                             </form>
                         </td>
